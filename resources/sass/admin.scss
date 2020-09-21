@@ -53,6 +53,7 @@ a, a:hover, a:focus {
     width: 100%;
     align-items: stretch;
     perspective: 1500px;
+  
 }
 
 
@@ -63,6 +64,7 @@ a, a:hover, a:focus {
     color: #fff;
     transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
     transform-origin: bottom left;
+
 }
 
 #sidebar.active {
@@ -89,9 +91,10 @@ a, a:hover, a:focus {
     padding: 10px;
     font-size: 1rem;
     display: block;
+      color: #fff;
 }
 #sidebar ul li a:hover {
-/*    color: #7386D5;*/
+
     background: #171719;
 }
 
@@ -143,6 +146,8 @@ a.logout {
 a.logout:hover{
     color: #de4f4f;
 }
+
+
 
 a.article, a.article:hover {
     background: #6d7fcc !important;
@@ -287,3 +292,43 @@ a.article, a.article:hover {
   color: #373b45;
   font-size: 3em; }
 
+/* Alertas al subir */
+
+.alert{
+    border-radius: 5px;
+    box-shadow: 1px 5px 9px 0 rgba(47,44,44,.2);
+    border: none;
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color:#fff;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    transition: .3s;
+}
+
+.closebtn:hover{
+    cursor: pointer;
+}
+
+.alert-danger{background-color: #ff3133;}
+.alert-success{background-color: #3cb878;}
+.alert-info{background-color: #318dff;}
+.alert-warning{background-color: #fcb03b;}
+
+
+.form-group input[type=file]{
+    font-size: 1rem;
+}
+
+button.btn.btn-primary.file{
+    padding: 15px;
+    margin: 50px;
+    font-size: 1rem;
+}

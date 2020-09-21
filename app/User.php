@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     public function files(){
-        return $this->hasMany(File::class)
+        return $this->hasMany(File::class);
     }
 
 
