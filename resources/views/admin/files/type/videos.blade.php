@@ -11,7 +11,7 @@
 				<table class="table table-hover">
 					<head>
 						<tr>
-							<th scope="col">ID</th>
+							<th scope="col"></th>
 							<th scope="col">Nombre</th>
 							<th scope="col">Subido</th>
 							<th scope="col">Ver</th>
@@ -21,15 +21,23 @@
 					<tbody>
 					@foreach($videos as $video)
 					<tr>
-						<th scope="row">{{ $video->id }}</th>
+						<th scope="row">
+							@if($video->extension == 'mp4' || $video->extension == 'MP4')
+							<img class="img-responsive" src="{{ asset('img/files/mpeg.svg') }}">
+							@endif
+							@if($video->extension == 'avi' || $video->extension == 'AVI')
+							<img class="img-responsive" src="{{ asset('img/files/avi.svg') }}">
+							@endif
+						</th>
 						<th scope="row">{{ $video->name }}</th>
-						<th scope="row">{{ $video->created_at }}</th>
+						<th scope="row">{{ $video->created_at->diffForHumans()  }}</th>
 						<th scope="row">
 			
-							<a href="{{ asset('storage')  }}/{{ $folder }}/video/{{ $video->name }}.{{ $video->extension }}" open><i class="fas fa-eye"></i> Ver</a>
+							<a class="btn btn-primary" target="_blank" href="{{ asset('storage')  }}/{{ $folder }}/video/{{ $video->name }}.{{ $video->extension }}" open><i class="fas fa-eye"></i> Descargar</a>
 
 						</th>
-						<th scope="row"><a href="#"><i class="fas fa-trash"></i> Eliminar</a></th>
+						<th scope="row">
+						<a class="btn btn-danger" href="#"><i class="fas fa-trash"></i> Eliminar</a></th>
 					</tr>
 					</tbody>
 					@endforeach		

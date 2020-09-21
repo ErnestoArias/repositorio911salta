@@ -35,7 +35,7 @@ class FilesController extends Controller
     }
 
      public function videos(){
-                                $videos = File::whereUserId(auth()->id())->OrderBy('id', 'desc')->where('type', '=', 'video')->get();
+            $videos = File::whereUserId(auth()->id())->OrderBy('id', 'desc')->where('type', '=', 'video')->get();
             $folder = Str::slug(Auth::user()->name. '-' . Auth::id());
 
             return view('admin.files.type.videos', compact('videos','folder'));
@@ -43,7 +43,7 @@ class FilesController extends Controller
     }
 
      public function audios(){
-                    $audios = File::whereUserId(auth()->id())->OrderBy('id', 'desc')->where('type', '=', 'audio')->get();
+            $audios = File::whereUserId(auth()->id())->OrderBy('id', 'desc')->where('type', '=', 'audio')->get();
             $folder = Str::slug(Auth::user()->name. '-' . Auth::id());
 
             return view('admin.files.type.audios', compact('audios','folder'));
@@ -52,7 +52,10 @@ class FilesController extends Controller
     }
 
      public function documents(){
-            return view('admin.files.type.documents');
+            $documents = File::whereUserId(auth()->id())->OrderBy('id', 'desc')->where('type', '=', 'document')->get();
+            $folder = Str::slug(Auth::user()->name. '-' . Auth::id());
+
+            return view('admin.files.type.documents', compact('documents','folder'));
         
     }
 
