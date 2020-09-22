@@ -31,14 +31,11 @@
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
-                <a class="navbar-brand ml-4 pt-4" href="#">
-               <img src="{{ asset('img/logo-white.svg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
-            Repositorio 911 Salta
-            </a>
+   
 
                     <div class="container mt-4 mb-2">
                         <div class="mb-2">
-                        <img src="img/users/user.jpg" class="img-responsive" style="border-radius: 50%;" alt="" width="70">
+                        <img src="{{ asset('img/users/user.jpg') }}" class="img-responsive" style="border-radius: 50%;" alt="" width="70"> Repositorio 911 Salta
                     </div>
                     <div class="profile-usertitle">
                         <div class="profile-usertitle-name">Ernesto Arias</div>
